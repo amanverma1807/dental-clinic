@@ -10,28 +10,28 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900">
+    <div className="min-h-screen flex flex-col bg-[#F8F6F0] text-[#334744]" suppressHydrationWarning>
       {/* Navigation */}
       <Navbar />
 
       {/* Main Content Landmark */}
       <main className="flex-1 flex flex-col">
-        {/* Hero Section */}
+        {/* Split-Layout Hero Section */}
         <Hero />
 
         {/* Clinical Specialties & Services */}
         <Specialties />
 
-        {/* Doctor Roster (Demo Placeholders) */}
+        {/* Consultant Doctor Roster (Sample Profiles) */}
         <Doctors />
 
-        {/* Appointment Notice & Contact Flow */}
+        {/* Appointment Notice & Scheduling Information */}
         <AppointmentNotice />
 
-        {/* Clinic & Consultation Schedule */}
+        {/* Clinic & Outpatient Consultation Timings */}
         <Timings />
 
-        {/* Physical Location & Contact Channels */}
+        {/* Physical Location & Contact Details */}
         <LocationContact />
       </main>
 

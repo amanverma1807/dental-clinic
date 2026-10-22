@@ -1,8 +1,17 @@
 @import "tailwindcss";
 
+@theme {
+  --color-teal-deep: #0f4f4a;
+  --color-teal-dark: #123b38;
+  --color-warm-bg: #f8f6f0;
+  --color-sage: #dce8df;
+  --color-body: #334744;
+  --color-subtle: #e3e8e3;
+}
+
 :root {
-  --background: #f8fafc;
-  --foreground: #0f172a;
+  --background: #f8f6f0;
+  --foreground: #123b38;
 }
 
 html {
@@ -10,8 +19,8 @@ html {
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background-color: var(--background);
+  color: #334744;
   font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -19,6 +28,6 @@ body {
 
 /* Accessible focus styling */
 :focus-visible {
-  outline: 2px solid #0d9488;
+  outline: 2px solid #0f4f4a;
   outline-offset: 2px;
 }
