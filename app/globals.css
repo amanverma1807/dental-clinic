@@ -1,19 +1,20 @@
 @import "tailwindcss";
 
 @theme {
-  --color-teal-deep: #0f4f4a;
-  --color-teal-dark: #123b38;
-  --color-warm-bg: #f8f6f0;
-  --color-sage: #dce8df;
-  --color-body: #334744;
-  --color-subtle: #e3e8e3;
+  --color-dental-navy: #164e63;
+  --color-dental-ocean: #287d91;
+  --color-dental-ice: #e8f4f7;
+  --color-dental-ivory: #f7f4ee;
+  --color-dental-body: #1e293b;
+  --color-dental-muted: #475569;
+  --color-dental-border: #d4e5e9;
   --font-serif: var(--font-serif), Georgia, Cambria, serif;
   --font-sans: var(--font-sans), system-ui, -apple-system, sans-serif;
 }
 
 :root {
-  --background: #f8f6f0;
-  --foreground: #123b38;
+  --background: #f7f4ee;
+  --foreground: #1e293b;
 }
 
 html {
@@ -22,7 +23,7 @@ html {
 
 body {
   background-color: var(--background);
-  color: #334744;
+  color: #1e293b;
   font-family: var(--font-sans), system-ui, sans-serif;
   font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   text-rendering: optimizeLegibility;
@@ -34,27 +35,37 @@ body {
   letter-spacing: -0.02em;
 }
 
-/* Subtle, refined shadows */
+/* Luxury refined shadows with dental blue tint */
 .shadow-soft {
-  box-shadow: 0 4px 20px -2px rgba(15, 79, 74, 0.05), 0 2px 6px -1px rgba(15, 79, 74, 0.02);
+  box-shadow: 0 4px 20px -2px rgba(22, 78, 99, 0.06), 0 2px 6px -1px rgba(22, 78, 99, 0.03);
 }
 
 .shadow-glow {
-  box-shadow: 0 16px 40px -4px rgba(15, 79, 74, 0.08), 0 6px 16px -2px rgba(15, 79, 74, 0.03);
+  box-shadow: 0 16px 40px -4px rgba(22, 78, 99, 0.09), 0 6px 16px -2px rgba(22, 78, 99, 0.04);
 }
 
 .shadow-card {
-  box-shadow: 0 2px 12px -1px rgba(18, 59, 56, 0.04), 0 1px 3px 0 rgba(18, 59, 56, 0.02);
+  box-shadow: 0 2px 14px -1px rgba(22, 78, 99, 0.05), 0 1px 3px 0 rgba(22, 78, 99, 0.02);
+}
+
+.shadow-glass {
+  box-shadow: 0 10px 30px -5px rgba(22, 78, 99, 0.08), 0 4px 10px -2px rgba(22, 78, 99, 0.04);
 }
 
 /* Accessible focus styling */
 :focus-visible {
-  outline: 2px solid #0f4f4a;
+  outline: 2px solid #287d91;
   outline-offset: 2px;
 }
 
+/* Selection */
+::selection {
+  background: #164e63;
+  color: #ffffff;
+}
+
 /* Continuous Horizontal Marquee Animation */
-@keyframes marquee {
+@keyframes marquee-scroll {
   0% {
     transform: translate3d(0, 0, 0);
   }
@@ -63,19 +74,19 @@ body {
   }
 }
 
-.animate-marquee {
+.animate-marquee-smooth {
   display: flex;
   width: max-content;
-  animation: marquee 38s linear infinite;
+  animation: marquee-scroll 32s linear infinite;
   will-change: transform;
 }
 
-.marquee-container:hover .animate-marquee {
+.marquee-container:hover .animate-marquee-smooth {
   animation-play-state: paused;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .animate-marquee {
+  .animate-marquee-smooth {
     animation: none;
     transform: none;
     flex-wrap: wrap;
@@ -87,16 +98,16 @@ body {
 @keyframes whatsapp-breathe {
   0%, 100% {
     transform: scale(1);
-    box-shadow: 0 8px 24px -2px rgba(37, 211, 102, 0.4), 0 2px 8px 0 rgba(15, 79, 74, 0.15);
+    box-shadow: 0 10px 26px -3px rgba(37, 211, 102, 0.4), 0 3px 10px 0 rgba(22, 78, 99, 0.12);
   }
   50% {
-    transform: scale(1.06);
-    box-shadow: 0 12px 32px 2px rgba(37, 211, 102, 0.55), 0 4px 12px 0 rgba(15, 79, 74, 0.2);
+    transform: scale(1.05);
+    box-shadow: 0 16px 36px 0 rgba(37, 211, 102, 0.52), 0 4px 14px 0 rgba(22, 78, 99, 0.18);
   }
 }
 
 .animate-whatsapp-float {
-  animation: whatsapp-breathe 3.6s ease-in-out infinite;
+  animation: whatsapp-breathe 3.4s ease-in-out infinite;
   will-change: transform, box-shadow;
 }
 
@@ -106,17 +117,50 @@ body {
   }
 }
 
-/* Custom delicate glass effect */
-.glass-panel {
-  background: rgba(255, 255, 255, 0.88);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(227, 232, 227, 0.8);
-}
-
-.glass-panel-dark {
-  background: rgba(18, 59, 56, 0.92);
+/* Refined Glassmorphism Surfaces */
+.glass-surface {
+  background: rgba(255, 255, 255, 0.82);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border: 1px solid rgba(220, 232, 223, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.glass-surface-subtle {
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(232, 244, 247, 0.85);
+}
+
+.glass-surface-dark {
+  background: rgba(22, 78, 99, 0.90);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(232, 244, 247, 0.25);
+}
+
+.glass-badge {
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.85);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f7f4ee;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #287d91;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #164e63;
 }

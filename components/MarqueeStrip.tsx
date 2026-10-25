@@ -6,64 +6,53 @@ interface MarqueeStripProps {
 
 const MARQUEE_ITEMS = [
   "Gentle Dental Care",
+  "Personalized Treatment",
   "Your Smile Matters",
-  "Painless Root Canal Treatment",
+  "Painless Single-Sitting RCT",
   "Invisible Clear Aligners",
-  "Personalized Treatment Plans",
+  "Swiss Titanium Implants",
   "European Class-B Sterilization",
-  "Digital Smile Design",
+  "Digital 3D Intraoral Scans",
+  "Zero-Wait Scheduled Slots",
   "Book Your Visit Today",
-  "Swiss & German Dental Implants",
-  "Gentle Care for Kids & Adults",
 ];
 
 export default function MarqueeStrip({ className = "" }: MarqueeStripProps) {
   return (
     <aside
       aria-label="Clinic Highlights Announcement Ticker"
-      className={`relative w-full overflow-hidden bg-[#0F4F4A] text-[#F8F6F0] py-3.5 border-y border-[#123B38] marquee-container select-none ${className}`}
+      className={`relative w-full overflow-hidden bg-[#164E63] text-white py-3.5 border-y border-[#287D91]/40 marquee-container select-none ${className}`}
     >
-      {/* Subtle edge fade overlays for premium cinematic presentation */}
+      {/* Edge gradient fade masks for smooth entrance/exit */}
       <div
-        className="pointer-events-none absolute left-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-r from-[#0F4F4A] to-transparent z-10"
+        className="pointer-events-none absolute left-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-r from-[#164E63] to-transparent z-10"
         aria-hidden="true"
       />
       <div
-        className="pointer-events-none absolute right-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-l from-[#0F4F4A] to-transparent z-10"
+        className="pointer-events-none absolute right-0 top-0 bottom-0 w-12 sm:w-24 bg-gradient-to-l from-[#164E63] to-transparent z-10"
         aria-hidden="true"
       />
 
-      <div className="flex animate-marquee items-center gap-8 text-xs sm:text-sm font-medium tracking-wide">
-        {/* Sequence 1 */}
-        <div className="flex items-center gap-8 shrink-0">
+      {/* Continuously moving track with exact duplicate for seamless infinite scrolling */}
+      <div className="flex animate-marquee-smooth items-center text-xs sm:text-sm font-medium tracking-wide">
+        {/* Track 1 */}
+        <div className="flex items-center shrink-0">
           {MARQUEE_ITEMS.map((item, idx) => (
-            <span key={`seq1-${idx}`} className="inline-flex items-center gap-3">
-              <span className="text-[#DCE8DF] font-serif text-sm">✦</span>
-              <span className="text-[#F8F6F0] tracking-wide whitespace-nowrap font-normal">
+            <span key={`seq1-${idx}`} className="inline-flex items-center gap-3 mx-4 sm:mx-6">
+              <span className="text-[#287D91] text-base leading-none">✦</span>
+              <span className="text-[#E8F4F7] tracking-wide whitespace-nowrap font-normal">
                 {item}
               </span>
             </span>
           ))}
         </div>
 
-        {/* Sequence 2 for seamless infinite loop */}
-        <div className="flex items-center gap-8 shrink-0" aria-hidden="true">
+        {/* Track 2 (Exact clone for seamless loop) */}
+        <div className="flex items-center shrink-0" aria-hidden="true">
           {MARQUEE_ITEMS.map((item, idx) => (
-            <span key={`seq2-${idx}`} className="inline-flex items-center gap-3">
-              <span className="text-[#DCE8DF] font-serif text-sm">✦</span>
-              <span className="text-[#F8F6F0] tracking-wide whitespace-nowrap font-normal">
-                {item}
-              </span>
-            </span>
-          ))}
-        </div>
-
-        {/* Sequence 3 to ensure wide desktop screens never see empty gap */}
-        <div className="flex items-center gap-8 shrink-0" aria-hidden="true">
-          {MARQUEE_ITEMS.map((item, idx) => (
-            <span key={`seq3-${idx}`} className="inline-flex items-center gap-3">
-              <span className="text-[#DCE8DF] font-serif text-sm">✦</span>
-              <span className="text-[#F8F6F0] tracking-wide whitespace-nowrap font-normal">
+            <span key={`seq2-${idx}`} className="inline-flex items-center gap-3 mx-4 sm:mx-6">
+              <span className="text-[#287D91] text-base leading-none">✦</span>
+              <span className="text-[#E8F4F7] tracking-wide whitespace-nowrap font-normal">
                 {item}
               </span>
             </span>

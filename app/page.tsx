@@ -13,22 +13,22 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col bg-[#F8F6F0] text-[#334744] relative">
-      {/* Top Header & Navigation */}
+    <div className="min-h-screen flex flex-col bg-[#F7F4EE] text-[#1E293B] relative selection:bg-[#E8F4F7] selection:text-[#164E63]">
+      {/* Refined Glassmorphic Header & Navigation */}
       <Navbar />
 
       {/* Main Content Landmark */}
       <main className="flex-1 flex flex-col">
-        {/* Split-Layout Art-Directed Hero Section */}
+        {/* Editorial High-Impact Dental Hero Section */}
         <Hero />
 
-        {/* Required Animation: Continuous Horizontal Announcement Ticker */}
+        {/* Seamless Continuous Horizontal Marquee Announcement Ticker */}
         <MarqueeStrip />
 
-        {/* Comprehensive Dental Treatments & Cosmetic Aligners */}
+        {/* Visual Showcase & Comprehensive Dental Treatments */}
         <Treatments />
 
-        {/* Patient Experience, Pain-Free Philosophy & Class-B Sterilization */}
+        {/* Patient Experience, European Class-B Sterilization & Gentle Care */}
         <PatientExperience />
 
         {/* Certified Dental Specialists & Implantologist Roster */}
@@ -37,17 +37,17 @@ export default function Home() {
         {/* Prominent Appointment Booking & Interactive Request Form */}
         <AppointmentSection />
 
-        {/* Weekly OPD Timings & Outpatient Consultation Shifts */}
+        {/* Weekly OPD Timings & Consultation Shifts */}
         <Timings />
 
         {/* Physical Location, Landmark Directions & Accessibility */}
         <LocationContact />
       </main>
 
-      {/* Footer */}
+      {/* Polished Dental Luxury Footer */}
       <Footer />
 
-      {/* Required Animation: Fixed Floating WhatsApp Breathing Button */}
+      {/* Subtle Floating WhatsApp Breathing Button */}
       <WhatsAppButton />
     </div>
   );

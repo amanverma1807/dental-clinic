@@ -17,9 +17,9 @@ const plusJakarta = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Sai Dental Clinic & Implant Centre | Gentle, World-Class Dentistry (Demo)",
+  title: "Sai Dental Clinic & Implant Centre | Modern, Painless Dentistry (Demo)",
   description:
-    "Experience calm, compassionate, and pain-free dentistry in India. Advanced root canals, invisible aligners, dental implants, and smile makeovers with European Class-B sterilization.",
+    "Experience calm, compassionate, and pain-free dentistry in India. Advanced single-sitting root canals, invisible aligners, Swiss dental implants, and smile makeovers with European Class-B sterilization.",
   keywords: [
     "dental clinic",
     "dentist in India",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#0f4f4a",
+  themeColor: "#164e63",
   width: "device-width",
   initialScale: 1,
 };
@@ -49,7 +49,7 @@ export default function RootLayout({
       className={`${dmSerif.variable} ${plusJakarta.variable} h-full antialiased`}
     >
       <body
-        className="min-h-full flex flex-col font-sans bg-[#F8F6F0] text-[#334744] selection:bg-[#DCE8DF] selection:text-[#0F4F4A]"
+        className="min-h-full flex flex-col font-sans bg-[#F7F4EE] text-[#1E293B] selection:bg-[#E8F4F7] selection:text-[#164E63]"
       >
         {children}
       </body>
