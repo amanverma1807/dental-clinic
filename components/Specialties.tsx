@@ -1,9 +1,10 @@
 import React from "react";
+import Image from "next/image";
 
 interface Specialty {
   id: string;
+  number: string;
   name: string;
-  icon: React.ReactNode;
   summary: string;
   scope: string[];
   days: string;
@@ -12,115 +13,126 @@ interface Specialty {
 const SPECIALTIES: Specialty[] = [
   {
     id: "general-medicine",
+    number: "01",
     name: "General Medicine",
-    icon: (
-      <svg className="w-6 h-6 text-[#0F4F4A]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-      </svg>
-    ),
     summary:
-      "Primary health assessments, acute illness management, viral fevers, diabetes, and hypertension control.",
-    scope: ["Fever & Infection Care", "Diabetes & Hypertension Management", "Preventive Health Checkups", "Thyroid Evaluations"],
-    days: "Mon – Sat (Morning & Evening OPD)",
+      "Comprehensive diagnostic evaluations, management of fevers, chronic lifestyle conditions, diabetes, and preventive checkups.",
+    scope: ["Viral & Infection Care", "Diabetes & Hypertension", "Preventive Health Panels", "Thyroid Evaluations"],
+    days: "Mon – Sat: Morning & Evening",
   },
   {
     id: "pediatrics",
+    number: "02",
     name: "Pediatrics & Child Health",
-    icon: (
-      <svg className="w-6 h-6 text-[#0F4F4A]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-      </svg>
-    ),
     summary:
-      "Comprehensive medical care for infants, children, and adolescents, including immunization tracking.",
-    scope: ["Routine Vaccination", "Growth & Nutrition Monitoring", "Pediatric Respiratory Care", "Childhood Infection Management"],
-    days: "Mon – Sat (Designated OPD Hours)",
+      "Nurturing medical care for newborns, toddlers, and young adults, including national immunization schedules and growth tracking.",
+    scope: ["Immunization Schedules", "Growth & Nutrition", "Pediatric Respiratory Care", "Childhood Infections"],
+    days: "Mon – Sat: Scheduled OPD",
   },
   {
     id: "gynecology",
+    number: "03",
     name: "Gynecology & Women's Health",
-    icon: (
-      <svg className="w-6 h-6 text-[#0F4F4A]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-      </svg>
-    ),
     summary:
-      "Routine well-woman consultations, antenatal checkups, and management of common gynecological concerns.",
-    scope: ["Routine Antenatal Care", "Menstrual Health Guidance", "PCOS / PCOD Management", "Well-Woman Health Screenings"],
-    days: "Mon, Wed, Fri (Afternoon & Evening)",
+      "Routine well-woman consultations, prenatal guidance, menstrual health assessment, and preventive wellness screenings.",
+    scope: ["Routine Antenatal Care", "Menstrual Health", "PCOS & Hormonal Guidance", "Well-Woman Panels"],
+    days: "Mon, Wed, Fri: Afternoon & Evening",
   },
   {
     id: "orthopedics",
+    number: "04",
     name: "Orthopedics & Joint Care",
-    icon: (
-      <svg className="w-6 h-6 text-[#0F4F4A]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M7 11.5V14m0-2.5v-6a1.5 1.5 0 113 0m-3 6a1.5 1.5 0 00-3 0v2a7.5 7.5 0 0015 0v-5a1.5 1.5 0 00-3 0m-6-3V11m0-5.5v-1a1.5 1.5 0 013 0v1m0 0V11m0-5.5a1.5 1.5 0 013 0v3m0 0V11" />
-      </svg>
-    ),
     summary:
-      "Specialized diagnosis and conservative care for back, neck, knee pain, osteoarthritis, and minor sprains.",
-    scope: ["Osteoarthritis Assessment", "Spine & Cervical Pain", "Musculoskeletal Sprains", "Bone Density Consultations"],
-    days: "Tue, Thu, Sat (Evening OPD)",
+      "Specialized assessment and non-surgical management of joint discomfort, spine pain, osteoarthritis, and minor musculoskeletal strains.",
+    scope: ["Osteoarthritis Care", "Cervical & Spine Health", "Sprains & Sports Injuries", "Bone Density Consults"],
+    days: "Tue, Thu, Sat: Evening OPD",
   },
   {
     id: "cardiology",
+    number: "05",
     name: "Cardiology",
-    icon: (
-      <svg className="w-6 h-6 text-[#0F4F4A]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M13 10V3L4 14h7v7l9-11h-7z" />
-      </svg>
-    ),
     summary:
-      "Outpatient cardiac evaluation, blood pressure monitoring, cholesterol regulation, and resting ECGs.",
-    scope: ["Hypertension Management", "Resting 12-Lead ECG Review", "Cardiovascular Risk Profiling", "Lipid & Cholesterol Care"],
-    days: "Tue & Fri (Scheduled OPD)",
+      "Outpatient cardiovascular screening, blood pressure regulation, cholesterol monitoring, and resting 12-lead ECG review.",
+    scope: ["Hypertension Protocols", "12-Lead ECG Analysis", "Cardiovascular Risk Review", "Lipid Management"],
+    days: "Tue & Fri: Scheduled OPD",
   },
   {
     id: "dermatology",
+    number: "06",
     name: "Dermatology",
-    icon: (
-      <svg className="w-6 h-6 text-[#0F4F4A]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-      </svg>
-    ),
     summary:
-      "Clinical evaluation of skin, hair, and nail conditions, acute allergies, eczema, and acne management.",
-    scope: ["Acne & Rosacea Care", "Allergic Dermatitis & Eczema", "Fungal & Bacterial Infections", "Hair & Scalp Health"],
-    days: "Mon & Thu (Evening OPD)",
+      "Clinical diagnosis and medical care for skin allergies, acute eczema, acne, fungal conditions, and scalp health.",
+    scope: ["Acne & Rosacea Care", "Allergic Dermatitis", "Fungal & Skin Infections", "Hair & Scalp Health"],
+    days: "Mon & Thu: Evening OPD",
   },
 ];
 
 export default function Specialties() {
   return (
-    <section id="specialties" className="py-16 lg:py-24 bg-[#FFFFFF] border-b border-[#E3E8E3]">
+    <section id="specialties" className="py-20 lg:py-28 bg-[#FFFFFF] border-b border-[#E3E8E3]/60">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
-        {/* Section Header */}
+        {/* Section Header: Inspired by reference editorial hierarchy */}
         <div className="max-w-3xl">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-[#DCE8DF] text-[#0F4F4A] text-xs font-bold uppercase tracking-wider mb-3">
-            Clinical Disciplines &bull; Demo Listing
-          </div>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#123B38] tracking-tight">
-            Our Medical Specialties
+          <span className="text-xs font-bold uppercase tracking-widest text-[#0F4F4A] block mb-2">
+            Clinical Disciplines &bull; Sample Listing
+          </span>
+          <h2 className="text-3xl sm:text-5xl font-normal text-[#123B38] font-display tracking-tight leading-[1.15]">
+            One connected view of your health.
           </h2>
-          <p className="mt-3 text-base sm:text-lg text-[#334744] leading-relaxed">
-            CarePoint Clinic brings together experienced consultants across primary care and key outpatient specialties, ensuring coordinated healthcare for all family members.
+          <p className="mt-4 text-base sm:text-lg text-[#334744]/90 leading-relaxed font-normal">
+            CarePoint Clinic brings together experienced consultants across primary care and core specialties, offering thoughtful, coordinated medicine under one roof.
           </p>
         </div>
 
-        {/* Specialties Grid */}
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {/* Featured Visual Banner (Inspired by the Reference's wide 3D cellular diagnostic band) */}
+        <div className="mt-12 rounded-3xl overflow-hidden bg-gradient-to-r from-[#123B38] to-[#0F4F4A] text-white shadow-soft border border-[#0F4F4A]">
+          <div className="grid grid-cols-1 lg:grid-cols-12 items-center">
+            <div className="lg:col-span-7 p-8 sm:p-12 space-y-4">
+              <span className="text-xs font-bold uppercase tracking-wider text-[#DCE8DF] block">
+                Integrated Outpatient Diagnostics
+              </span>
+              <h3 className="text-2xl sm:text-4xl font-normal text-white font-display leading-tight">
+                Start with a clearer picture.
+              </h3>
+              <p className="text-sm sm:text-base text-[#DCE8DF]/90 max-w-lg leading-relaxed">
+                From morning fasting blood panels and routine sugar tests to 12-lead ECGs, our on-site sample collection delivers clear, reliable clinical data for your doctor.
+              </p>
+              <div className="pt-2">
+                <a
+                  href="#timings"
+                  className="inline-flex items-center text-xs sm:text-sm font-semibold text-white bg-white/15 hover:bg-white/25 px-5 py-2.5 rounded-full border border-white/20 transition-all"
+                >
+                  View Sample Collection Hours &rarr;
+                </a>
+              </div>
+            </div>
+
+            <div className="lg:col-span-5 h-64 lg:h-full min-h-[220px] relative">
+              <Image
+                src="/images/teal-cells-banner.jpg"
+                alt="Translucent 3D cellular bio-cluster in deep teal representing diagnostic clinical clarity"
+                fill
+                sizes="(max-width: 1024px) 100vw, 40vw"
+                className="object-cover object-center"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Specialties Grid: Varied layout, subtle borders, whitespace-first */}
+        <div className="mt-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
           {SPECIALTIES.map((spec) => (
             <div
               key={spec.id}
-              className="rounded-2xl border border-[#E3E8E3] bg-[#F8F6F0]/40 p-6 sm:p-7 flex flex-col justify-between hover:border-[#0F4F4A]/60 hover:bg-[#FFFFFF] hover:shadow-md transition-all group"
+              className="rounded-2xl p-7 bg-[#F8F6F0]/50 hover:bg-[#F8F6F0] border border-[#E3E8E3]/60 hover:border-[#0F4F4A]/30 transition-all flex flex-col justify-between group shadow-soft hover:shadow-glow"
             >
               <div>
-                {/* Icon & Days */}
-                <div className="flex items-center justify-between mb-4">
-                  <div className="w-12 h-12 rounded-xl bg-[#DCE8DF] flex items-center justify-center group-hover:bg-[#0F4F4A] group-hover:text-white transition-colors text-[#0F4F4A]">
-                    {spec.icon}
-                  </div>
-                  <span className="text-[11px] font-semibold text-[#123B38] bg-[#DCE8DF]/70 px-2.5 py-1 rounded-md">
+                {/* Number & Schedule */}
+                <div className="flex items-center justify-between pb-4 border-b border-[#E3E8E3]/60 mb-5">
+                  <span className="text-sm font-mono font-bold text-[#0F4F4A]/70">
+                    {spec.number}
+                  </span>
+                  <span className="text-[11px] font-semibold text-[#123B38] bg-[#DCE8DF]/70 px-2.5 py-0.5 rounded-full">
                     {spec.days}
                   </span>
                 </div>
@@ -130,20 +142,20 @@ export default function Specialties() {
                   {spec.name}
                 </h3>
 
-                {/* Description */}
-                <p className="mt-2 text-sm text-[#334744] leading-relaxed">
+                {/* Summary */}
+                <p className="mt-2 text-sm text-[#334744]/85 leading-relaxed font-normal">
                   {spec.summary}
                 </p>
 
-                {/* Scope of Treatment */}
-                <div className="mt-5 pt-4 border-t border-[#E3E8E3]">
-                  <span className="text-xs font-bold text-[#123B38] uppercase tracking-wider block mb-2">
-                    Common Consultation Focus:
+                {/* Scope */}
+                <div className="mt-5 pt-4 border-t border-[#E3E8E3]/50">
+                  <span className="text-[11px] font-bold text-[#123B38] uppercase tracking-wider block mb-2">
+                    Key Consultation Areas:
                   </span>
                   <ul className="space-y-1.5 text-xs text-[#334744]">
                     {spec.scope.map((item, index) => (
                       <li key={index} className="flex items-center gap-2">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#0F4F4A] shrink-0" aria-hidden="true" />
+                        <span className="w-1.5 h-1.5 rounded-full bg-[#0F4F4A]" aria-hidden="true" />
                         <span>{item}</span>
                       </li>
                     ))}
@@ -152,35 +164,17 @@ export default function Specialties() {
               </div>
 
               {/* Action */}
-              <div className="mt-6 pt-4 border-t border-[#E3E8E3] flex items-center justify-between">
-                <span className="text-xs text-[#334744]/70 font-medium">Outpatient Care</span>
+              <div className="mt-6 pt-4 border-t border-[#E3E8E3]/50 flex items-center justify-between">
+                <span className="text-[11px] text-[#334744]/70 font-medium">Outpatient Consultation</span>
                 <a
                   href="#appointment-notice"
-                  className="inline-flex items-center text-xs font-bold text-[#0F4F4A] hover:text-[#123B38] focus-visible:ring-1 focus-visible:ring-[#0F4F4A] rounded px-1 py-0.5"
+                  className="inline-flex items-center text-xs font-bold text-[#0F4F4A] hover:text-[#123B38] transition-colors"
                 >
                   Consultation Details &rarr;
                 </a>
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Diagnostics Info Box */}
-        <div className="mt-10 p-5 rounded-xl bg-[#F8F6F0] border border-[#E3E8E3] flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-          <div className="space-y-0.5">
-            <h4 className="text-sm font-bold text-[#123B38]">
-              On-Site Diagnostic Sample Collection (Demo Facility)
-            </h4>
-            <p className="text-xs text-[#334744]">
-              Basic blood pathology, blood sugar, lipid panel, thyroid profile, and routine urine diagnostics are collected on-site during morning clinic hours (07:30 AM &ndash; 02:00 PM).
-            </p>
-          </div>
-          <a
-            href="tel:+919800000000"
-            className="shrink-0 inline-flex items-center justify-center min-h-[42px] px-4 py-2 text-xs font-semibold rounded-lg bg-white border border-[#E3E8E3] text-[#123B38] hover:bg-[#DCE8DF]/40 transition-colors"
-          >
-            Inquire Lab Timings
-          </a>
         </div>
       </div>
     </section>

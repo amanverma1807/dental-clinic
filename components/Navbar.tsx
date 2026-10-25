@@ -9,18 +9,18 @@ export default function Navbar() {
   const closeMenu = () => setMobileMenuOpen(false);
 
   return (
-    <header className="sticky top-0 z-40 w-full bg-[#FFFFFF]/95 backdrop-blur-md border-b border-[#E3E8E3]">
+    <header className="sticky top-0 z-40 w-full bg-[#FFFFFF]/90 backdrop-blur-md border-b border-[#E3E8E3]/70">
       {/* Top Advisory Strip */}
-      <div className="bg-[#123B38] text-[#E3E8E3] text-xs py-2 px-4 sm:px-6">
+      <div className="bg-[#123B38] text-[#E3E8E3] text-[11px] py-1.5 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-1 text-center sm:text-left">
           <div className="flex items-center gap-2">
-            <span className="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-semibold bg-[#DCE8DF] text-[#123B38] uppercase tracking-wider">
+            <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[9px] font-bold bg-[#DCE8DF] text-[#123B38] uppercase tracking-wider">
               Demo Portal
             </span>
             <span>Emergency / Ambulance Assistance in India: Dial <strong>112</strong> or <strong>108</strong></span>
           </div>
-          <div className="flex items-center gap-4 text-xs">
-            <span className="hidden md:inline text-slate-300">OPD Desk Enquiries:</span>
+          <div className="flex items-center gap-4 text-[11px]">
+            <span className="hidden md:inline text-[#DCE8DF]/70">OPD Desk Enquiries:</span>
             <a
               href="tel:+919800000000"
               className="text-[#DCE8DF] font-semibold hover:text-white transition-colors focus-visible:ring-1 focus-visible:ring-[#DCE8DF] rounded px-1"
@@ -41,9 +41,9 @@ export default function Navbar() {
           href="/"
           className="flex items-center gap-3 group focus-visible:ring-2 focus-visible:ring-[#0F4F4A] rounded-lg p-1"
         >
-          <span className="w-11 h-11 rounded-xl bg-[#0F4F4A] text-white flex items-center justify-center shadow-xs group-hover:bg-[#123B38] transition-colors">
+          <span className="w-10 h-10 rounded-xl bg-[#0F4F4A] text-white flex items-center justify-center shadow-soft group-hover:bg-[#123B38] transition-colors">
             <svg
-              className="w-6 h-6"
+              className="w-5 h-5"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -59,21 +59,21 @@ export default function Navbar() {
           </span>
           <span>
             <span className="flex items-center gap-1.5">
-              <span className="text-xl font-bold tracking-tight text-[#123B38]">
+              <span className="text-xl font-bold tracking-tight text-[#123B38] font-display">
                 CarePoint Clinic
               </span>
-              <span className="text-[10px] font-semibold bg-[#DCE8DF] text-[#0F4F4A] px-1.5 py-0.5 rounded border border-[#E3E8E3]">
+              <span className="text-[10px] font-semibold bg-[#DCE8DF] text-[#0F4F4A] px-1.5 py-0.5 rounded">
                 Demo
               </span>
             </span>
-            <span className="block text-xs text-[#334744]/80 font-medium">
+            <span className="block text-[11px] text-[#334744]/75 font-medium">
               Multi-Specialty Healthcare
             </span>
           </span>
         </Link>
 
         {/* Desktop Nav Links */}
-        <div className="hidden lg:flex items-center gap-8 text-sm font-medium text-[#334744]">
+        <div className="hidden lg:flex items-center gap-8 text-[13px] font-medium text-[#334744]">
           <a
             href="#specialties"
             className="hover:text-[#0F4F4A] transition-colors focus-visible:ring-1 focus-visible:ring-[#0F4F4A] rounded px-1 py-1"
@@ -104,10 +104,10 @@ export default function Navbar() {
         <div className="hidden sm:flex items-center gap-3">
           <a
             href="#appointment-notice"
-            className="inline-flex items-center justify-center min-h-[46px] px-5 py-2.5 rounded-xl bg-[#0F4F4A] hover:bg-[#123B38] text-white text-sm font-semibold shadow-xs hover:shadow transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0F4F4A] focus-visible:ring-offset-2"
+            className="inline-flex items-center justify-center min-h-[44px] px-5 py-2.5 rounded-full bg-[#0F4F4A] hover:bg-[#123B38] text-white text-xs font-semibold shadow-soft hover:shadow-glow transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0F4F4A] focus-visible:ring-offset-2"
           >
             <svg
-              className="w-4 h-4 mr-2"
+              className="w-3.5 h-3.5 mr-2"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -160,7 +160,7 @@ export default function Navbar() {
 
       {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
-        <div className="lg:hidden border-t border-[#E3E8E3] bg-[#FFFFFF] px-4 pt-3 pb-6 space-y-3 shadow-lg">
+        <div className="lg:hidden border-t border-[#E3E8E3]/70 bg-[#FFFFFF] px-4 pt-3 pb-6 space-y-3 shadow-lg">
           <div className="flex flex-col space-y-1 font-medium text-[#123B38]">
             <a
               href="#specialties"
@@ -192,17 +192,17 @@ export default function Navbar() {
             </a>
           </div>
 
-          <div className="pt-2 border-t border-[#E3E8E3] flex flex-col gap-2.5">
+          <div className="pt-2 border-t border-[#E3E8E3]/60 flex flex-col gap-2.5">
             <a
               href="#appointment-notice"
               onClick={closeMenu}
-              className="w-full inline-flex items-center justify-center min-h-[46px] px-4 py-2.5 rounded-xl bg-[#0F4F4A] text-white text-sm font-semibold shadow-xs hover:bg-[#123B38]"
+              className="w-full inline-flex items-center justify-center min-h-[46px] px-4 py-2.5 rounded-full bg-[#0F4F4A] text-white text-xs font-semibold shadow-soft"
             >
               Book an Appointment
             </a>
             <a
               href="tel:+919800000000"
-              className="w-full inline-flex items-center justify-center min-h-[46px] px-4 py-2.5 rounded-xl border border-[#E3E8E3] text-[#123B38] text-sm font-semibold hover:bg-[#F8F6F0]"
+              className="w-full inline-flex items-center justify-center min-h-[46px] px-4 py-2.5 rounded-full border border-[#E3E8E3] text-[#123B38] text-xs font-semibold hover:bg-[#F8F6F0]"
             >
               Call Clinic Desk: +91 98000 00000
             </a>

@@ -15,7 +15,7 @@ export default function Footer() {
                 </svg>
               </span>
               <span>
-                <span className="text-xl font-bold tracking-tight text-white">CarePoint Clinic</span>
+                <span className="text-xl font-bold tracking-tight text-white font-display">CarePoint Clinic</span>
                 <span className="ml-2 text-[10px] font-semibold bg-[#0F4F4A] text-[#DCE8DF] px-1.5 py-0.5 rounded border border-[#0F4F4A]">
                   Demo
                 </span>

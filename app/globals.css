@@ -7,6 +7,8 @@
   --color-sage: #dce8df;
   --color-body: #334744;
   --color-subtle: #e3e8e3;
+  --font-serif: var(--font-serif), Georgia, Cambria, serif;
+  --font-sans: var(--font-sans), system-ui, -apple-system, sans-serif;
 }
 
 :root {
@@ -21,9 +23,24 @@ html {
 body {
   background-color: var(--background);
   color: #334744;
+  font-family: var(--font-sans), system-ui, sans-serif;
   font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+}
+
+.font-display {
+  font-family: var(--font-serif), Georgia, serif;
+  letter-spacing: -0.02em;
+}
+
+/* Subtle, refined shadows */
+.shadow-soft {
+  box-shadow: 0 4px 20px -2px rgba(15, 79, 74, 0.06), 0 2px 6px -1px rgba(15, 79, 74, 0.03);
+}
+
+.shadow-glow {
+  box-shadow: 0 12px 36px -4px rgba(15, 79, 74, 0.1), 0 4px 12px -2px rgba(15, 79, 74, 0.04);
 }
 
 /* Accessible focus styling */
