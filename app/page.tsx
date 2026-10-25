@@ -3,51 +3,43 @@ import Navbar from "@/components/Navbar";
 import MarqueeStrip from "@/components/MarqueeStrip";
 import Hero from "@/components/Hero";
 import Treatments from "@/components/Treatments";
-import PatientExperience from "@/components/PatientExperience";
 import Doctors from "@/components/Doctors";
+import PatientExperience from "@/components/PatientExperience";
 import AppointmentSection from "@/components/AppointmentSection";
-import Timings from "@/components/Timings";
-import LocationContact from "@/components/LocationContact";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col bg-[#F7F4EE] text-[#1E293B] relative selection:bg-[#E8F4F7] selection:text-[#164E63]">
-      {/* Refined Glassmorphic Header & Navigation */}
+      {/* Navigation */}
       <Navbar />
 
       {/* Main Content Landmark */}
       <main className="flex-1 flex flex-col">
-        {/* Editorial High-Impact Dental Hero Section */}
+        {/* 1. Hero Section */}
         <Hero />
 
-        {/* Seamless Continuous Horizontal Marquee Announcement Ticker */}
+        {/* Continuous Announcement Ticker */}
         <MarqueeStrip />
 
-        {/* Visual Showcase & Comprehensive Dental Treatments */}
+        {/* 2. Key Treatments (4-6 concise cards) */}
         <Treatments />
 
-        {/* Patient Experience, European Class-B Sterilization & Gentle Care */}
-        <PatientExperience />
-
-        {/* Certified Dental Specialists & Implantologist Roster */}
+        {/* 3. About the Dentist & Clinic */}
         <Doctors />
 
-        {/* Prominent Appointment Booking & Interactive Request Form */}
+        {/* 4. Why Choose Us (4 clear clinical standards) */}
+        <PatientExperience />
+
+        {/* 5. Appointment & Contact (Unified with Timings & Location) */}
         <AppointmentSection />
-
-        {/* Weekly OPD Timings & Consultation Shifts */}
-        <Timings />
-
-        {/* Physical Location, Landmark Directions & Accessibility */}
-        <LocationContact />
       </main>
 
-      {/* Polished Dental Luxury Footer */}
+      {/* 6. Polished Footer */}
       <Footer />
 
-      {/* Subtle Floating WhatsApp Breathing Button */}
+      {/* Floating WhatsApp Breathing Button */}
       <WhatsAppButton />
     </div>
   );
