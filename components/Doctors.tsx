@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function Doctors() {
   return (
-    <section id="about" className="py-12 sm:py-16 bg-[#F7F4EE] border-b border-[#D4E5E9]">
+    <section id="about" className="py-12 sm:py-16 bg-[#F7F4EE] border-b border-[#D4E5E9] scroll-mt-24 sm:scroll-mt-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         
         <div className="bg-white rounded-3xl border border-[#D4E5E9] overflow-hidden shadow-soft">

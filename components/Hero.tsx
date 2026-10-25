@@ -17,10 +17,6 @@ export default function Hero() {
           
           {/* Content Column */}
           <div className="lg:col-span-7 flex flex-col space-y-4 sm:space-y-5 z-10">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E8F4F7] border border-[#D4E5E9] text-[#164E63] text-xs font-semibold w-max">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#287D91] animate-pulse" aria-hidden="true" />
-              <span>Modern Painless Dentistry &bull; Indiranagar, Bengaluru</span>
-            </div>
 
             <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-normal text-[#164E63] font-display leading-[1.1] tracking-tight">
               Where gentle artistry <br className="hidden sm:inline" />
@@ -57,7 +53,12 @@ export default function Hero() {
             <div className="flex items-center gap-4 pt-1">
               <a
                 href="#contact"
-                className="inline-flex items-center justify-center min-h-[46px] px-6 py-2.5 rounded-full bg-[#164E63] hover:bg-[#287D91] text-white font-semibold text-xs tracking-wide shadow-soft transition-all duration-200 active:scale-95"
+                onClick={(e) => {
+                  e.preventDefault();
+                  const el = document.getElementById("contact");
+                  if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+                }}
+                className="inline-flex items-center justify-center min-h-[46px] px-6 py-2.5 rounded-full bg-[#164E63] hover:bg-[#287D91] text-white font-semibold text-xs tracking-wide shadow-soft transition-all duration-200 active:scale-95 cursor-pointer"
               >
                 <span>Book Appointment</span>
                 <svg
@@ -73,7 +74,12 @@ export default function Hero() {
 
               <a
                 href="#treatments"
-                className="inline-flex items-center text-xs font-semibold text-[#164E63] hover:text-[#287D91] transition-colors py-2"
+                onClick={(e) => {
+                  e.preventDefault();
+                  const el = document.getElementById("treatments");
+                  if (el) el.scrollIntoView({ behavior: "smooth", block: "start" });
+                }}
+                className="inline-flex items-center text-xs font-semibold text-[#164E63] hover:text-[#287D91] transition-colors py-2 cursor-pointer"
               >
                 <span>View Key Treatments &darr;</span>
               </a>

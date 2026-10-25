@@ -65,7 +65,7 @@ const TREATMENTS: Treatment[] = [
 
 export default function Treatments() {
   return (
-    <section id="treatments" className="py-12 sm:py-16 bg-white border-b border-[#D4E5E9]">
+    <section id="treatments" className="py-12 sm:py-16 bg-white border-b border-[#D4E5E9] scroll-mt-24 sm:scroll-mt-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         
         {/* Concise Section Header */}

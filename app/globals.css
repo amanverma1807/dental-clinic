@@ -75,22 +75,16 @@ body {
 }
 
 .animate-marquee-smooth {
-  display: flex;
-  width: max-content;
-  animation: marquee-scroll 32s linear infinite;
+  display: flex !important;
+  width: max-content !important;
+  animation: marquee-scroll 24s linear infinite !important;
+  -webkit-animation: marquee-scroll 24s linear infinite !important;
   will-change: transform;
 }
 
-.marquee-container:hover .animate-marquee-smooth {
-  animation-play-state: paused;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .animate-marquee-smooth {
-    animation: none;
-    transform: none;
-    flex-wrap: wrap;
-    justify-content: center;
+@media (hover: hover) and (pointer: fine) {
+  .marquee-container:hover .animate-marquee-smooth {
+    animation-play-state: paused;
   }
 }
 
