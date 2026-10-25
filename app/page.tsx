@@ -1,42 +1,54 @@
 import React from "react";
 import Navbar from "@/components/Navbar";
+import MarqueeStrip from "@/components/MarqueeStrip";
 import Hero from "@/components/Hero";
-import Specialties from "@/components/Specialties";
+import Treatments from "@/components/Treatments";
+import PatientExperience from "@/components/PatientExperience";
 import Doctors from "@/components/Doctors";
-import AppointmentNotice from "@/components/AppointmentNotice";
+import AppointmentSection from "@/components/AppointmentSection";
 import Timings from "@/components/Timings";
 import LocationContact from "@/components/LocationContact";
 import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 export default function Home() {
   return (
-    <div className="min-h-screen flex flex-col bg-[#F8F6F0] text-[#334744]" suppressHydrationWarning>
-      {/* Navigation */}
+    <div className="min-h-screen flex flex-col bg-[#F8F6F0] text-[#334744] relative">
+      {/* Top Header & Navigation */}
       <Navbar />
 
       {/* Main Content Landmark */}
       <main className="flex-1 flex flex-col">
-        {/* Split-Layout Hero Section */}
+        {/* Split-Layout Art-Directed Hero Section */}
         <Hero />
 
-        {/* Clinical Specialties & Services */}
-        <Specialties />
+        {/* Required Animation: Continuous Horizontal Announcement Ticker */}
+        <MarqueeStrip />
 
-        {/* Consultant Doctor Roster (Sample Profiles) */}
+        {/* Comprehensive Dental Treatments & Cosmetic Aligners */}
+        <Treatments />
+
+        {/* Patient Experience, Pain-Free Philosophy & Class-B Sterilization */}
+        <PatientExperience />
+
+        {/* Certified Dental Specialists & Implantologist Roster */}
         <Doctors />
 
-        {/* Appointment Notice & Scheduling Information */}
-        <AppointmentNotice />
+        {/* Prominent Appointment Booking & Interactive Request Form */}
+        <AppointmentSection />
 
-        {/* Clinic & Outpatient Consultation Timings */}
+        {/* Weekly OPD Timings & Outpatient Consultation Shifts */}
         <Timings />
 
-        {/* Physical Location & Contact Details */}
+        {/* Physical Location, Landmark Directions & Accessibility */}
         <LocationContact />
       </main>
 
       {/* Footer */}
       <Footer />
+
+      {/* Required Animation: Fixed Floating WhatsApp Breathing Button */}
+      <WhatsAppButton />
     </div>
   );
 }

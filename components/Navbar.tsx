@@ -9,23 +9,31 @@ export default function Navbar() {
   const closeMenu = () => setMobileMenuOpen(false);
 
   return (
-    <header className="sticky top-0 z-40 w-full bg-[#FFFFFF]/90 backdrop-blur-md border-b border-[#E3E8E3]/70">
-      {/* Top Advisory Strip */}
+    <header className="sticky top-0 z-40 w-full bg-[#FFFFFF]/95 backdrop-blur-md border-b border-[#E3E8E3]/80">
+      {/* Top Advisory & Helpline Strip */}
       <div className="bg-[#123B38] text-[#E3E8E3] text-[11px] py-1.5 px-4 sm:px-6">
-        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-1 text-center sm:text-left">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-1.5 text-center sm:text-left">
           <div className="flex items-center gap-2">
             <span className="inline-flex items-center px-1.5 py-0.5 rounded text-[9px] font-bold bg-[#DCE8DF] text-[#123B38] uppercase tracking-wider">
               Demo Portal
             </span>
-            <span>Emergency / Ambulance Assistance in India: Dial <strong>112</strong> or <strong>108</strong></span>
+            <span className="text-[#DCE8DF]/90">
+              Immediate Tooth Pain & Emergency Dental Helpline: <strong>+91 98000 00000</strong>
+            </span>
           </div>
+
           <div className="flex items-center gap-4 text-[11px]">
-            <span className="hidden md:inline text-[#DCE8DF]/70">OPD Desk Enquiries:</span>
+            <span className="hidden md:inline text-[#DCE8DF]/75">
+              OPD Hours: Mon–Sat 9:30 AM – 8:30 PM
+            </span>
+            <span className="hidden sm:inline text-[#DCE8DF]/40">&bull;</span>
             <a
-              href="tel:+919800000000"
-              className="text-[#DCE8DF] font-semibold hover:text-white transition-colors focus-visible:ring-1 focus-visible:ring-[#DCE8DF] rounded px-1"
+              href="https://wa.me/919800000000"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#DCE8DF] font-semibold hover:text-white transition-colors underline decoration-[#DCE8DF]/40 underline-offset-2"
             >
-              +91 98000 00000
+              WhatsApp Us &rarr;
             </a>
           </div>
         </div>
@@ -39,11 +47,12 @@ export default function Navbar() {
         {/* Brand / Logo */}
         <Link
           href="/"
-          className="flex items-center gap-3 group focus-visible:ring-2 focus-visible:ring-[#0F4F4A] rounded-lg p-1"
+          className="flex items-center gap-3.5 group focus-visible:ring-2 focus-visible:ring-[#0F4F4A] rounded-xl p-1"
         >
-          <span className="w-10 h-10 rounded-xl bg-[#0F4F4A] text-white flex items-center justify-center shadow-soft group-hover:bg-[#123B38] transition-colors">
+          {/* Custom Stylized Tooth / Dental Crown Icon */}
+          <div className="w-11 h-11 rounded-2xl bg-[#0F4F4A] text-white flex items-center justify-center shadow-soft group-hover:bg-[#123B38] transition-all duration-300">
             <svg
-              className="w-5 h-5"
+              className="w-6 h-6"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -52,62 +61,69 @@ export default function Navbar() {
               <path
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                strokeWidth={2.2}
-                d="M12 4v16m8-8H4"
+                strokeWidth={1.8}
+                d="M7 4c-2.2 0-4 1.8-4 4 0 3 1.5 6 3 9.5 1 2.3 2.5 3.5 4 3.5 1.5 0 2-1.5 2-3 0-1.5.5-2 2-2s2 .5 2 2c0 1.5.5 3 2 3 1.5 0 3-1.2 4-3.5 1.5-3.5 3-6.5 3-9.5 0-2.2-1.8-4-4-4-2 0-3.5 1.2-5 3C9.5 5.2 9 4 7 4z"
               />
             </svg>
-          </span>
-          <span>
-            <span className="flex items-center gap-1.5">
-              <span className="text-xl font-bold tracking-tight text-[#123B38] font-display">
-                CarePoint Clinic
+          </div>
+
+          <div>
+            <div className="flex items-center gap-2">
+              <span className="text-xl sm:text-2xl font-normal tracking-tight text-[#123B38] font-display">
+                Sai Dental Clinic
               </span>
-              <span className="text-[10px] font-semibold bg-[#DCE8DF] text-[#0F4F4A] px-1.5 py-0.5 rounded">
+              <span className="text-[9px] font-bold uppercase tracking-wider bg-[#DCE8DF] text-[#0F4F4A] px-1.5 py-0.5 rounded">
                 Demo
               </span>
+            </div>
+            <span className="block text-[11px] text-[#334744]/80 font-medium tracking-wide">
+              Advanced Multispeciality & Implant Centre
             </span>
-            <span className="block text-[11px] text-[#334744]/75 font-medium">
-              Multi-Specialty Healthcare
-            </span>
-          </span>
+          </div>
         </Link>
 
         {/* Desktop Nav Links */}
-        <div className="hidden lg:flex items-center gap-8 text-[13px] font-medium text-[#334744]">
+        <div className="hidden lg:flex items-center gap-7 text-[13px] font-medium text-[#334744]">
           <a
-            href="#specialties"
+            href="#treatments"
             className="hover:text-[#0F4F4A] transition-colors focus-visible:ring-1 focus-visible:ring-[#0F4F4A] rounded px-1 py-1"
           >
-            Specialties
+            Treatments
           </a>
           <a
-            href="#doctors"
+            href="#experience"
             className="hover:text-[#0F4F4A] transition-colors focus-visible:ring-1 focus-visible:ring-[#0F4F4A] rounded px-1 py-1"
           >
-            Our Doctors
+            Comfort & Sterilization
+          </a>
+          <a
+            href="#specialists"
+            className="hover:text-[#0F4F4A] transition-colors focus-visible:ring-1 focus-visible:ring-[#0F4F4A] rounded px-1 py-1"
+          >
+            Dental Specialists
           </a>
           <a
             href="#timings"
             className="hover:text-[#0F4F4A] transition-colors focus-visible:ring-1 focus-visible:ring-[#0F4F4A] rounded px-1 py-1"
           >
-            Clinic Timings
+            OPD Timings
           </a>
           <a
-            href="#contact"
+            href="#location"
             className="hover:text-[#0F4F4A] transition-colors focus-visible:ring-1 focus-visible:ring-[#0F4F4A] rounded px-1 py-1"
           >
-            Location & Contact
+            Location
           </a>
         </div>
 
-        {/* Desktop CTA */}
+        {/* Desktop CTAs */}
         <div className="hidden sm:flex items-center gap-3">
           <a
-            href="#appointment-notice"
-            className="inline-flex items-center justify-center min-h-[44px] px-5 py-2.5 rounded-full bg-[#0F4F4A] hover:bg-[#123B38] text-white text-xs font-semibold shadow-soft hover:shadow-glow transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0F4F4A] focus-visible:ring-offset-2"
+            href="tel:+919800000000"
+            className="inline-flex items-center gap-1.5 text-xs font-semibold text-[#123B38] hover:text-[#0F4F4A] px-3 py-2 transition-colors"
           >
             <svg
-              className="w-3.5 h-3.5 mr-2"
+              className="w-3.5 h-3.5 text-[#0F4F4A]"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -117,10 +133,17 @@ export default function Navbar() {
                 strokeLinecap="round"
                 strokeLinejoin="round"
                 strokeWidth={2}
-                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
               />
             </svg>
-            Book an Appointment
+            <span>+91 98000 00000</span>
+          </a>
+
+          <a
+            href="#appointment-booking"
+            className="inline-flex items-center justify-center min-h-[44px] px-5 py-2.5 rounded-full bg-[#0F4F4A] hover:bg-[#123B38] text-white text-xs font-semibold shadow-soft hover:shadow-glow transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#0F4F4A] focus-visible:ring-offset-2"
+          >
+            Book Consultation
           </a>
         </div>
 
@@ -128,7 +151,7 @@ export default function Navbar() {
         <button
           type="button"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-          className="lg:hidden inline-flex items-center justify-center min-h-[44px] min-w-[44px] p-2 rounded-lg text-[#123B38] hover:bg-[#F8F6F0] transition-colors focus-visible:ring-2 focus-visible:ring-[#0F4F4A]"
+          className="lg:hidden inline-flex items-center justify-center min-h-[44px] min-w-[44px] p-2 rounded-xl text-[#123B38] hover:bg-[#F8F6F0] transition-colors focus-visible:ring-2 focus-visible:ring-[#0F4F4A]"
           aria-expanded={mobileMenuOpen}
           aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
         >
@@ -160,49 +183,56 @@ export default function Navbar() {
 
       {/* Mobile Menu Dropdown */}
       {mobileMenuOpen && (
-        <div className="lg:hidden border-t border-[#E3E8E3]/70 bg-[#FFFFFF] px-4 pt-3 pb-6 space-y-3 shadow-lg">
-          <div className="flex flex-col space-y-1 font-medium text-[#123B38]">
+        <div className="lg:hidden border-t border-[#E3E8E3] bg-[#FFFFFF] px-5 pt-4 pb-7 space-y-4 shadow-xl">
+          <div className="flex flex-col space-y-1.5 font-medium text-[#123B38]">
             <a
-              href="#specialties"
+              href="#treatments"
               onClick={closeMenu}
-              className="px-3 py-2.5 rounded-lg hover:bg-[#F8F6F0] transition-colors"
+              className="px-3 py-2.5 rounded-xl hover:bg-[#F8F6F0] transition-colors text-sm"
             >
-              Specialties
+              Dental Treatments & Procedures
             </a>
             <a
-              href="#doctors"
+              href="#experience"
               onClick={closeMenu}
-              className="px-3 py-2.5 rounded-lg hover:bg-[#F8F6F0] transition-colors"
+              className="px-3 py-2.5 rounded-xl hover:bg-[#F8F6F0] transition-colors text-sm"
             >
-              Our Doctors
+              Comfort & Sterilization Standards
+            </a>
+            <a
+              href="#specialists"
+              onClick={closeMenu}
+              className="px-3 py-2.5 rounded-xl hover:bg-[#F8F6F0] transition-colors text-sm"
+            >
+              Our Dental Specialists
             </a>
             <a
               href="#timings"
               onClick={closeMenu}
-              className="px-3 py-2.5 rounded-lg hover:bg-[#F8F6F0] transition-colors"
+              className="px-3 py-2.5 rounded-xl hover:bg-[#F8F6F0] transition-colors text-sm"
             >
-              Clinic Timings
+              OPD Timings & Shifts
             </a>
             <a
-              href="#contact"
+              href="#location"
               onClick={closeMenu}
-              className="px-3 py-2.5 rounded-lg hover:bg-[#F8F6F0] transition-colors"
+              className="px-3 py-2.5 rounded-xl hover:bg-[#F8F6F0] transition-colors text-sm"
             >
-              Location & Contact
+              Clinic Location & Directions
             </a>
           </div>
 
-          <div className="pt-2 border-t border-[#E3E8E3]/60 flex flex-col gap-2.5">
+          <div className="pt-3 border-t border-[#E3E8E3] flex flex-col gap-2.5">
             <a
-              href="#appointment-notice"
+              href="#appointment-booking"
               onClick={closeMenu}
-              className="w-full inline-flex items-center justify-center min-h-[46px] px-4 py-2.5 rounded-full bg-[#0F4F4A] text-white text-xs font-semibold shadow-soft"
+              className="w-full inline-flex items-center justify-center min-h-[48px] px-4 py-2.5 rounded-full bg-[#0F4F4A] text-white text-sm font-semibold shadow-soft"
             >
-              Book an Appointment
+              Book Consultation Now
             </a>
             <a
               href="tel:+919800000000"
-              className="w-full inline-flex items-center justify-center min-h-[46px] px-4 py-2.5 rounded-full border border-[#E3E8E3] text-[#123B38] text-xs font-semibold hover:bg-[#F8F6F0]"
+              className="w-full inline-flex items-center justify-center min-h-[48px] px-4 py-2.5 rounded-full border border-[#E3E8E3] text-[#123B38] text-sm font-semibold hover:bg-[#F8F6F0]"
             >
               Call Clinic Desk: +91 98000 00000
             </a>

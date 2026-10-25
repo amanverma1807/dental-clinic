@@ -2,101 +2,136 @@ import React from "react";
 
 export default function Timings() {
   return (
-    <section id="timings" className="py-20 lg:py-28 bg-[#F8F6F0] border-b border-[#E3E8E3]/60">
+    <section id="timings" className="py-20 lg:py-28 bg-[#F8F6F0] border-b border-[#E3E8E3]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-          {/* Left Column: Heading & Context */}
-          <div className="lg:col-span-5 space-y-5">
-            <span className="text-xs font-bold uppercase tracking-widest text-[#0F4F4A] block">
-              Operating Schedule &bull; Sample Hours
-            </span>
-            <h2 className="text-3xl sm:text-5xl font-normal text-[#123B38] font-display tracking-tight leading-[1.15]">
-              Clinic & OPD Timings
-            </h2>
+          {/* Left Column: Context & Shift Details */}
+          <div className="lg:col-span-5 space-y-6">
+            <div>
+              <span className="text-xs font-bold uppercase tracking-widest text-[#0F4F4A] block mb-2">
+                Consultation Schedule &bull; Sample Hours
+              </span>
+              <h2 className="text-3xl sm:text-5xl font-normal text-[#123B38] font-display tracking-tight leading-[1.12]">
+                Clinic OPD & Consultation Timings
+              </h2>
+            </div>
+
             <p className="text-base text-[#334744]/90 leading-relaxed font-normal">
-              CarePoint Clinic operates structured morning and evening outpatient consultation shifts Monday through Saturday, with an accessible morning session on Sunday.
+              Sai Dental Clinic operates organized morning and evening outpatient consultation shifts Monday through Saturday, accommodating busy workdays, with an accessible Sunday morning session.
             </p>
 
-            <div className="p-5 bg-white rounded-2xl border border-[#E3E8E3]/70 text-xs text-[#334744] space-y-1 shadow-soft">
-              <strong className="block font-bold text-sm text-[#123B38]">Sample Hours Notice</strong>
+            {/* Sterilization Break Note */}
+            <div className="p-5 bg-white rounded-3xl border border-[#E3E8E3] text-xs text-[#334744] space-y-2 shadow-card">
+              <div className="flex items-center gap-2 text-[#0F4F4A] font-bold">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>Daily Operatory Sterilization Window</span>
+              </div>
               <p className="leading-relaxed">
-                The hours listed below represent the standard operational schedule. Patients are encouraged to call reception to confirm doctor availability before visiting.
+                Between <strong>01:30 PM &ndash; 05:00 PM</strong>, operatory suites undergo continuous Class-B autoclave instrument cycles and hospital-grade surface disinfection prior to evening consultations.
               </p>
             </div>
 
-            <div className="p-5 bg-white rounded-2xl border border-[#E3E8E3]/70 space-y-2 text-xs text-[#334744] shadow-soft">
+            {/* Emergency Dental Advisory */}
+            <div className="p-5 bg-white rounded-3xl border border-[#E3E8E3] space-y-2 text-xs text-[#334744] shadow-card">
               <span className="font-bold text-[#123B38] uppercase tracking-wider block">
-                Emergency Medical Guidance
+                Acute Dental Pain / Trauma Protocol
               </span>
               <p className="leading-relaxed">
-                CarePoint Clinic is an outpatient care facility and does not provide 24-hour casualty or ICU emergency services. In severe or life-threatening situations, please call <strong>112</strong> or <strong>108</strong>, or proceed immediately to the nearest hospital emergency room.
+                Patients suffering from severe throbbing tooth pain, chipped teeth from falls, or facial swelling are requested to call reception beforehand so our dental team can prepare the operatory immediately.
               </p>
+              <a
+                href="tel:+919800000000"
+                className="inline-flex items-center gap-1.5 font-bold text-[#0F4F4A] hover:underline pt-1"
+              >
+                Call Emergency Line: +91 98000 00000 &rarr;
+              </a>
             </div>
           </div>
 
-          {/* Right Column: Schedule Table */}
+          {/* Right Column: Weekly Schedule Card */}
           <div className="lg:col-span-7">
-            <div className="bg-white rounded-3xl border border-[#E3E8E3]/80 p-8 sm:p-10 space-y-6 shadow-glow">
-              <h3 className="text-xl font-normal text-[#123B38] font-display border-b border-[#E3E8E3]/60 pb-4 flex items-center justify-between">
-                <span>Weekly Outpatient Consultation Schedule</span>
-                <span className="text-xs font-semibold text-[#0F4F4A] bg-[#DCE8DF] px-2.5 py-0.5 rounded-full">Sample Timings</span>
-              </h3>
+            <div className="bg-white rounded-3xl border border-[#E3E8E3] p-8 sm:p-10 space-y-6 shadow-glow">
+              <div className="border-b border-[#E3E8E3]/70 pb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <h3 className="text-xl font-normal text-[#123B38] font-display">
+                  Weekly Dental Outpatient Consultation Hours
+                </h3>
+                <span className="text-[11px] font-bold text-[#0F4F4A] bg-[#DCE8DF] px-3 py-1 rounded-full w-max">
+                  Sample Timings
+                </span>
+              </div>
 
-              <div className="divide-y divide-[#E3E8E3]/60 text-sm">
-                {/* General Medicine OPD */}
-                <div className="py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+              <div className="divide-y divide-[#E3E8E3]/70 text-sm">
+                {/* Morning OPD */}
+                <div className="py-4.5 flex flex-col sm:flex-row sm:items-center justify-between gap-1.5">
                   <div>
-                    <span className="font-bold text-[#123B38] block text-base">General Medicine & Family Health</span>
-                    <span className="text-xs text-[#334744]/75">Monday &ndash; Saturday</span>
+                    <span className="font-bold text-[#123B38] block text-base">
+                      Morning Dental Consultation Shift
+                    </span>
+                    <span className="text-xs text-[#334744]/75">
+                      Monday &ndash; Saturday (General OPD, Root Canals & Diagnostics)
+                    </span>
                   </div>
-                  <div className="text-[#334744] sm:text-right font-medium text-xs sm:text-sm">
-                    08:00 AM &ndash; 01:00 PM<br />
-                    04:30 PM &ndash; 08:00 PM
+                  <div className="text-[#334744] sm:text-right font-semibold text-xs sm:text-sm">
+                    09:30 AM &ndash; 01:30 PM
                   </div>
                 </div>
 
-                {/* Specialist OPD */}
-                <div className="py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                {/* Evening OPD */}
+                <div className="py-4.5 flex flex-col sm:flex-row sm:items-center justify-between gap-1.5">
                   <div>
-                    <span className="font-bold text-[#123B38] block text-base">Specialist Clinics (Pediatrics, Orthopedics, Gynae)</span>
-                    <span className="text-xs text-[#334744]/75">Scheduled Clinic Days</span>
+                    <span className="font-bold text-[#123B38] block text-base">
+                      Evening Dental Consultation Shift
+                    </span>
+                    <span className="text-xs text-[#334744]/75">
+                      Monday &ndash; Saturday (Aligners, Cosmetic Dentistry & Implants)
+                    </span>
                   </div>
-                  <div className="text-[#334744] sm:text-right font-medium text-xs sm:text-sm">
-                    05:00 PM &ndash; 08:00 PM
+                  <div className="text-[#334744] sm:text-right font-semibold text-xs sm:text-sm">
+                    05:00 PM &ndash; 08:30 PM
                   </div>
                 </div>
 
-                {/* Sunday OPD */}
-                <div className="py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                {/* Sunday Slot */}
+                <div className="py-4.5 flex flex-col sm:flex-row sm:items-center justify-between gap-1.5">
                   <div>
-                    <span className="font-bold text-[#123B38] block text-base">Sunday Morning OPD</span>
-                    <span className="text-xs text-[#334744]/75">Routine follow-ups & urgent outpatient visits</span>
+                    <span className="font-bold text-[#123B38] block text-base">
+                      Sunday Special Morning Clinic
+                    </span>
+                    <span className="text-xs text-[#334744]/75">
+                      Prior Appointments, Aligners checks & Urgent Pain Relief
+                    </span>
                   </div>
-                  <div className="text-[#334744] sm:text-right font-medium text-xs sm:text-sm">
-                    09:00 AM &ndash; 01:00 PM
+                  <div className="text-[#334744] sm:text-right font-semibold text-xs sm:text-sm">
+                    10:00 AM &ndash; 01:30 PM
                   </div>
                 </div>
 
-                {/* Lab Diagnostics */}
-                <div className="py-4 flex flex-col sm:flex-row sm:items-center justify-between gap-1">
+                {/* Chairside Digital Scans */}
+                <div className="py-4.5 flex flex-col sm:flex-row sm:items-center justify-between gap-1.5">
                   <div>
-                    <span className="font-bold text-[#123B38] block text-base">Diagnostic Blood & Urine Sample Collection</span>
-                    <span className="text-xs text-[#334744]/75">Monday &ndash; Saturday (Fasting tests early morning)</span>
+                    <span className="font-bold text-[#123B38] block text-base">
+                      3D Digital Intraoral Scans & OPG X-Rays
+                    </span>
+                    <span className="text-xs text-[#334744]/75">
+                      Available on-site chairside throughout all operating hours
+                    </span>
                   </div>
-                  <div className="text-[#334744] sm:text-right font-medium text-xs sm:text-sm">
-                    07:30 AM &ndash; 02:00 PM
+                  <div className="text-[#0F4F4A] sm:text-right font-bold text-xs sm:text-sm">
+                    During All OPD Shifts
                   </div>
                 </div>
               </div>
 
               {/* Bottom Quick Help */}
-              <div className="pt-3 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs border-t border-[#E3E8E3]/60">
-                <span className="text-[#334744]/80">Confirm specialist timings with reception before visiting:</span>
+              <div className="pt-4 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs border-t border-[#E3E8E3]/70">
+                <span className="text-[#334744]/80">Confirm specialist availability with reception before visiting:</span>
                 <a
-                  href="tel:+919800000000"
+                  href="#appointment-booking"
                   className="inline-flex items-center text-[#0F4F4A] hover:text-[#123B38] font-bold"
                 >
-                  Call Reception: +91 98000 00000 &rarr;
+                  Reserve Your Consultation Time &rarr;
                 </a>
               </div>
             </div>
