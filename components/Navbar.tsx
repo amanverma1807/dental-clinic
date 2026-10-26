@@ -42,8 +42,8 @@ export default function Navbar() {
       <div className="bg-[#164E63] text-white text-[11px] py-1.5 px-3 sm:px-6 border-b border-[#287D91]/30">
         <div className="max-w-7xl mx-auto flex items-center justify-between gap-2">
           <div className="flex items-center gap-2">
-            <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-[#287D91]/60 text-white text-[10px] font-semibold border border-white/20">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#22C55E]" aria-hidden="true" />
+            <span className="inline-flex items-center gap-1 px-2 py-0.5 bg-[#287D91]/60 text-white text-[10px] font-semibold border border-white/20">
+              <span className="w-1.5 h-1.5 bg-[#22C55E]" aria-hidden="true" />
               <span>Demo</span>
             </span>
             <span className="text-[#E8F4F7]/90 text-[11px]">
@@ -57,7 +57,7 @@ export default function Navbar() {
           <div className="flex items-center gap-3 text-[#E8F4F7]/90 text-[11px]">
             <span className="hidden md:inline">Mon–Sat 9:30 AM–8:30 PM &bull; Sun 10 AM–1:30 PM</span>
             <span className="inline-flex items-center gap-1 text-[#22C55E] text-[10.5px] font-semibold">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#22C55E] animate-pulse" />
+              <span className="w-1.5 h-1.5 bg-[#22C55E] animate-pulse" />
               <span>Open Today</span>
             </span>
           </div>
@@ -72,9 +72,9 @@ export default function Navbar() {
         {/* Brand Logo */}
         <Link
           href="/"
-          className="flex items-center gap-2 sm:gap-3 group focus-visible:ring-2 focus-visible:ring-[#287D91] rounded-xl shrink min-w-0"
+          className="flex items-center gap-2 sm:gap-3 group focus-visible:ring-2 focus-visible:ring-[#287D91] shrink min-w-0"
         >
-          <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-[#164E63] to-[#287D91] text-white flex items-center justify-center shadow-soft shrink-0">
+          <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-[#164E63] to-[#287D91] text-white flex items-center justify-center shadow-soft shrink-0">
             <svg
               className="w-4 h-4 sm:w-5 sm:h-5 text-white"
               fill="none"
@@ -154,7 +154,7 @@ export default function Navbar() {
               e.preventDefault();
               scrollToSection("contact");
             }}
-            className="inline-flex items-center justify-center min-h-[36px] sm:min-h-[40px] px-3.5 sm:px-5 py-1.5 sm:py-2 rounded-full bg-[#164E63] hover:bg-[#287D91] text-white font-semibold text-xs tracking-wide shadow-soft transition-all duration-200 active:scale-95 cursor-pointer whitespace-nowrap touch-manipulation"
+            className="inline-flex items-center justify-center min-h-[36px] sm:min-h-[40px] px-3.5 sm:px-5 py-1.5 sm:py-2 bg-[#164E63] hover:bg-[#287D91] text-white font-semibold text-xs tracking-wide shadow-soft transition-all duration-200 active:scale-95 cursor-pointer whitespace-nowrap touch-manipulation"
           >
             <span className="inline sm:hidden">Book</span>
             <span className="hidden sm:inline">Book Appointment</span>
@@ -166,7 +166,7 @@ export default function Navbar() {
             onClick={() => setMobileMenuOpen((prev) => !prev)}
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileMenuOpen}
-            className="md:hidden flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 rounded-xl text-[#164E63] hover:bg-[#E8F4F7] active:bg-[#E8F4F7] transition-colors cursor-pointer shrink-0 border border-[#D4E5E9]/70 touch-manipulation"
+            className="md:hidden flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 text-[#164E63] hover:bg-[#E8F4F7] active:bg-[#E8F4F7] transition-colors cursor-pointer shrink-0 border border-[#D4E5E9]/70 touch-manipulation"
           >
             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               {mobileMenuOpen ? (
@@ -235,7 +235,7 @@ export default function Navbar() {
                   e.preventDefault();
                   scrollToSection("contact");
                 }}
-                className="w-full inline-flex items-center justify-center min-h-[42px] rounded-xl bg-[#164E63] text-white text-xs font-semibold shadow-soft cursor-pointer touch-manipulation"
+                className="w-full inline-flex items-center justify-center min-h-[42px] bg-[#164E63] text-white text-xs font-semibold shadow-soft cursor-pointer touch-manipulation"
               >
                 Book Appointment Now &rarr;
               </a>

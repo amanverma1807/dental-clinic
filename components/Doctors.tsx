@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 
@@ -6,7 +8,7 @@ export default function Doctors() {
     <section id="about" className="py-12 sm:py-16 bg-[#F7F4EE] border-b border-[#D4E5E9] scroll-mt-24 sm:scroll-mt-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
         
-        <div className="bg-white rounded-3xl border border-[#D4E5E9] overflow-hidden shadow-soft">
+        <div className="bg-white border border-[#D4E5E9] overflow-hidden shadow-soft">
           <div className="grid grid-cols-1 lg:grid-cols-12 items-center">
             
             {/* Doctor Portrait Column */}
@@ -20,7 +22,7 @@ export default function Doctors() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#164E63]/75 via-transparent to-transparent pointer-events-none" />
               
-              <div className="absolute bottom-4 left-4 right-4 p-3 rounded-xl glass-surface-dark text-white text-xs flex items-center justify-between">
+              <div className="absolute bottom-4 left-4 right-4 p-3 glass-surface-dark text-white text-xs flex items-center justify-between">
                 <span className="font-semibold text-white">BDS, MDS (Prosthodontics & Implants)</span>
                 <span className="text-[11px] text-[#E8F4F7]">15+ Yrs Practice (Demo)</span>
               </div>
@@ -40,18 +42,18 @@ export default function Doctors() {
                 At Sai Dental Clinic, our philosophy centers on conservative dentistry, patient comfort, and strict European Class-B sterilization. From single-visit painless root canals to computer-guided dental implants, we provide honest diagnoses with zero unnecessary treatments.
               </p>
 
-              {/* Core Clinical Focus Badges */}
+              {/* Core Clinical Focus Badges - Sharp Rectangles */}
               <div className="flex flex-wrap gap-2 pt-1">
-                <span className="px-3 py-1 rounded-full bg-[#E8F4F7] text-[#164E63] text-xs font-semibold border border-[#D4E5E9]">
+                <span className="px-3 py-1 bg-[#E8F4F7] text-[#164E63] text-xs font-semibold border border-[#D4E5E9]">
                   Dental Implants
                 </span>
-                <span className="px-3 py-1 rounded-full bg-[#E8F4F7] text-[#164E63] text-xs font-semibold border border-[#D4E5E9]">
+                <span className="px-3 py-1 bg-[#E8F4F7] text-[#164E63] text-xs font-semibold border border-[#D4E5E9]">
                   Painless Root Canals
                 </span>
-                <span className="px-3 py-1 rounded-full bg-[#E8F4F7] text-[#164E63] text-xs font-semibold border border-[#D4E5E9]">
+                <span className="px-3 py-1 bg-[#E8F4F7] text-[#164E63] text-xs font-semibold border border-[#D4E5E9]">
                   Clear Aligners
                 </span>
-                <span className="px-3 py-1 rounded-full bg-[#E8F4F7] text-[#164E63] text-xs font-semibold border border-[#D4E5E9]">
+                <span className="px-3 py-1 bg-[#E8F4F7] text-[#164E63] text-xs font-semibold border border-[#D4E5E9]">
                   Smile Makeovers
                 </span>
               </div>
@@ -59,7 +61,7 @@ export default function Doctors() {
               <div className="pt-3 flex items-center gap-4">
                 <a
                   href="#contact"
-                  className="inline-flex items-center justify-center min-h-[42px] px-5 py-2 rounded-full bg-[#164E63] hover:bg-[#287D91] text-white text-xs font-semibold transition-all duration-200"
+                  className="inline-flex items-center justify-center min-h-[42px] px-5 py-2 bg-[#164E63] hover:bg-[#287D91] text-white text-xs font-semibold transition-all duration-200"
                 >
                   <span>Book Consultation With Doctor</span>
                   <span className="ml-1.5">&rarr;</span>

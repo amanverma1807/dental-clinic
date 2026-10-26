@@ -83,10 +83,10 @@ export default function Treatments() {
           {TREATMENTS.map((item, idx) => (
             <div
               key={idx}
-              className="p-6 rounded-2xl bg-[#F7F4EE]/70 border border-[#D4E5E9] hover:border-[#287D91]/60 hover:bg-[#F7F4EE] transition-all duration-200 flex flex-col justify-between"
+              className="p-6 bg-[#F7F4EE]/70 border border-[#D4E5E9] hover:border-[#287D91]/60 hover:bg-[#F7F4EE] transition-all duration-200 flex flex-col justify-between"
             >
               <div>
-                <div className="w-10 h-10 rounded-xl bg-white text-[#287D91] flex items-center justify-center mb-4 border border-[#D4E5E9]/60 shadow-xs">
+                <div className="w-10 h-10 bg-white text-[#287D91] flex items-center justify-center mb-4 border border-[#D4E5E9]/60 shadow-xs">
                   {item.icon}
                 </div>
                 <h3 className="text-lg font-semibold text-[#164E63] font-display">

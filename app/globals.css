@@ -17,6 +17,21 @@
   --foreground: #1e293b;
 }
 
+/* Sharp Rectangular Corners Everywhere */
+*,
+*::before,
+*::after {
+  border-radius: 0;
+}
+
+/* Exception: Keep WhatsApp floating button & tooltip circular / rounded */
+[data-whatsapp-rounded],
+[data-whatsapp-rounded] a,
+[data-whatsapp-rounded] span,
+[data-whatsapp-rounded] div {
+  border-radius: 9999px !important;
+}
+
 html {
   scroll-behavior: smooth;
 }

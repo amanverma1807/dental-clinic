@@ -9,7 +9,7 @@ export default function Timings() {
           {/* Left Column: Context & Shift Details */}
           <div className="lg:col-span-5 space-y-6">
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E8F4F7] text-[#164E63] text-xs font-semibold mb-3">
+              <div className="inline-flex items-center gap-2 px-3 py-1  bg-[#E8F4F7] text-[#164E63] text-xs font-semibold mb-3">
                 <span>Outpatient Schedule &bull; Sample Hours</span>
               </div>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-normal text-[#164E63] font-display tracking-tight leading-[1.12]">
@@ -22,7 +22,7 @@ export default function Timings() {
             </p>
 
             {/* Sterilization Window Card */}
-            <div className="p-6 bg-[#F7F4EE] rounded-2xl border border-[#D4E5E9] text-xs text-[#1E293B] space-y-2 shadow-xs">
+            <div className="p-6 bg-[#F7F4EE]  border border-[#D4E5E9] text-xs text-[#1E293B] space-y-2 shadow-xs">
               <div className="flex items-center gap-2 text-[#164E63] font-bold">
                 <svg className="w-4 h-4 text-[#287D91]" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
@@ -35,7 +35,7 @@ export default function Timings() {
             </div>
 
             {/* Acute Pain Protocol */}
-            <div className="p-6 bg-[#E8F4F7] rounded-2xl border border-[#D4E5E9] space-y-2 text-xs text-[#1E293B]">
+            <div className="p-6 bg-[#E8F4F7]  border border-[#D4E5E9] space-y-2 text-xs text-[#1E293B]">
               <span className="font-bold text-[#164E63] uppercase tracking-wider block">
                 Acute Dental Pain & Emergency Protocol
               </span>
@@ -53,12 +53,12 @@ export default function Timings() {
 
           {/* Right Column: Weekly Schedule Card */}
           <div className="lg:col-span-7">
-            <div className="bg-[#F7F4EE] rounded-3xl border border-[#D4E5E9] p-8 sm:p-10 space-y-6 shadow-soft">
+            <div className="bg-[#F7F4EE]  border border-[#D4E5E9] p-8 sm:p-10 space-y-6 shadow-soft">
               <div className="border-b border-[#D4E5E9] pb-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
                 <h3 className="text-xl sm:text-2xl font-normal text-[#164E63] font-display">
                   Weekly Consultation Shifts
                 </h3>
-                <span className="text-[11px] font-bold text-[#164E63] bg-white px-3 py-1 rounded-full border border-[#D4E5E9] w-max">
+                <span className="text-[11px] font-bold text-[#164E63] bg-white px-3 py-1  border border-[#D4E5E9] w-max">
                   Demo Hours
                 </span>
               </div>
@@ -75,13 +75,13 @@ export default function Timings() {
                       Monday &ndash; Saturday &bull; Root Canals, Checkups & Digital Scans
                     </span>
                   </div>
-                  <div className="text-[#164E63] sm:text-right font-semibold text-xs sm:text-sm bg-white px-3 py-1.5 rounded-xl border border-[#D4E5E9] w-max">
+                  <div className="text-[#164E63] sm:text-right font-semibold text-xs sm:text-sm bg-white px-3 py-1.5  border border-[#D4E5E9] w-max">
                     09:30 AM &ndash; 01:30 PM
                   </div>
                 </div>
 
                 {/* Sterilization Break Note */}
-                <div className="py-3 flex items-center justify-between text-xs text-[#475569] bg-white/40 px-3 rounded-lg my-1">
+                <div className="py-3 flex items-center justify-between text-xs text-[#475569] bg-white/40 px-3  my-1">
                   <span>Operatory Sterilization Break</span>
                   <span className="font-mono text-[#287D91]">01:30 PM &ndash; 05:00 PM</span>
                 </div>
@@ -96,7 +96,7 @@ export default function Timings() {
                       Monday &ndash; Saturday &bull; Clear Aligners, Implants & Cosmetic Veneers
                     </span>
                   </div>
-                  <div className="text-[#164E63] sm:text-right font-semibold text-xs sm:text-sm bg-white px-3 py-1.5 rounded-xl border border-[#D4E5E9] w-max">
+                  <div className="text-[#164E63] sm:text-right font-semibold text-xs sm:text-sm bg-white px-3 py-1.5  border border-[#D4E5E9] w-max">
                     05:00 PM &ndash; 08:30 PM
                   </div>
                 </div>
@@ -111,7 +111,7 @@ export default function Timings() {
                       Consultations & Emergency Follow-ups by Prior Appointment
                     </span>
                   </div>
-                  <div className="text-[#287D91] sm:text-right font-semibold text-xs sm:text-sm bg-white px-3 py-1.5 rounded-xl border border-[#D4E5E9] w-max">
+                  <div className="text-[#287D91] sm:text-right font-semibold text-xs sm:text-sm bg-white px-3 py-1.5  border border-[#D4E5E9] w-max">
                     10:00 AM &ndash; 01:30 PM
                   </div>
                 </div>
@@ -119,7 +119,7 @@ export default function Timings() {
               </div>
 
               {/* Pre-Booking Advisory */}
-              <div className="p-4 rounded-xl bg-white border border-[#D4E5E9] text-xs text-[#475569] flex items-center justify-between gap-4">
+              <div className="p-4  bg-white border border-[#D4E5E9] text-xs text-[#475569] flex items-center justify-between gap-4">
                 <span>Walk-ins accommodated during OPD shifts based on operatory availability.</span>
                 <a
                   href="#appointment-booking"

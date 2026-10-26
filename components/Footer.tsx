@@ -10,7 +10,7 @@ export default function Footer() {
           {/* Brand & Overview */}
           <div className="lg:col-span-5 space-y-4">
             <Link href="/" className="flex items-center gap-3">
-              <span className="w-10 h-10 rounded-2xl bg-[#287D91] text-white flex items-center justify-center font-bold shadow-soft">
+              <span className="w-10 h-10 bg-[#287D91] text-white flex items-center justify-center font-bold shadow-soft">
                 <svg
                   className="w-5 h-5 text-white"
                   fill="none"
@@ -97,7 +97,7 @@ export default function Footer() {
             <span className="text-xs font-bold text-white uppercase tracking-wider block">
               Demonstration & Clinical Notice
             </span>
-            <div className="p-4 rounded-2xl bg-white/10 border border-white/10 text-xs text-[#E8F4F7] space-y-2 leading-relaxed">
+            <div className="p-4 bg-white/10 border border-white/10 text-xs text-[#E8F4F7] space-y-2 leading-relaxed">
               <p>
                 <strong>Demo Website:</strong> This website is an agency demonstration build for Sai Dental Clinic. All credentials, doctor schedules, and contact details are placeholders designed for portfolio preview.
               </p>
