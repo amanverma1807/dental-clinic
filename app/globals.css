@@ -173,3 +173,37 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: #164e63;
 }
+
+/* Animated Shifting Gradient: Blue, Off-White & Gray (Inspired by memo-galleryy) */
+@keyframes movingGradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animated-gradient-bg {
+  background: linear-gradient(
+    -45deg,
+    #FAF8F5,
+    #E2E8F0,
+    #CDE8F0,
+    #F4F1EA,
+    #BAE6F3,
+    #E5E9EE,
+    #D6EDF5
+  );
+  background-size: 300% 300%;
+  animation: movingGradient 12s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animated-gradient-bg {
+    animation: none !important;
+  }
+}
