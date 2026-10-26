@@ -46,27 +46,20 @@ export default function Navbar() {
               <span className="w-1.5 h-1.5 rounded-full bg-[#22C55E]" aria-hidden="true" />
               <span>Demo</span>
             </span>
-            <span className="text-[#E8F4F7]/90 hidden sm:inline">
-              Helpline:{" "}
+            <span className="text-[#E8F4F7]/90 text-[11px]">
+              <span className="hidden sm:inline">Helpline: </span>
               <a href="tel:+919800000000" className="font-semibold text-white hover:text-[#E8F4F7]">
                 +91 98000 00000
               </a>
             </span>
           </div>
 
-          <div className="flex items-center gap-4 text-[#E8F4F7]/85">
+          <div className="flex items-center gap-3 text-[#E8F4F7]/90 text-[11px]">
             <span className="hidden md:inline">Mon–Sat 9:30 AM–8:30 PM &bull; Sun 10 AM–1:30 PM</span>
-            <a
-              href="https://wa.me/919800000000"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-white hover:text-[#E8F4F7] font-medium transition-colors"
-            >
-              <svg className="w-3.5 h-3.5 fill-[#22C55E]" viewBox="0 0 24 24" aria-hidden="true">
-                <path d="M12.031 2C6.495 2 2 6.495 2 12.031c0 1.908.535 3.69 1.463 5.215L2 22l4.896-1.428A9.972 9.972 0 0012.031 22C17.568 22 22 17.505 22 12.031 22 6.495 17.568 2 12.031 2zm0 18.257c-1.592 0-3.08-.43-4.364-1.182l-.312-.185-3.23.942.946-3.149-.204-.326A8.22 8.22 0 013.774 12.03c0-4.553 3.704-8.257 8.257-8.257 4.553 0 8.257 3.704 8.257 8.257 0 4.553-3.704 8.257-8.257 8.257z" />
-              </svg>
-              <span>WhatsApp</span>
-            </a>
+            <span className="inline-flex items-center gap-1 text-[#22C55E] text-[10.5px] font-semibold">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#22C55E] animate-pulse" />
+              <span>Open Today</span>
+            </span>
           </div>
         </div>
       </div>

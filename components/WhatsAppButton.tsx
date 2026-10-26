@@ -19,7 +19,7 @@ export default function WhatsAppButton() {
 
   return (
     <div
-      className="fixed bottom-6 right-6 z-50 flex items-center gap-3 pointer-events-auto"
+      className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50 flex items-center gap-3 pointer-events-auto"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -44,7 +44,7 @@ export default function WhatsAppButton() {
         rel="noopener noreferrer"
         aria-label="Contact Sai Dental Clinic on WhatsApp for appointments and inquiries"
         aria-describedby="whatsapp-tooltip"
-        className="relative flex items-center justify-center w-14 h-14 rounded-full bg-[#25D366] text-white shadow-[0_8px_24px_rgba(37,211,102,0.4)] animate-whatsapp-float transition-transform hover:scale-110 active:scale-95 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#25D366]/40 focus-visible:ring-offset-2"
+        className="relative flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#25D366] text-white shadow-[0_6px_20px_rgba(37,211,102,0.4)] animate-whatsapp-float transition-transform hover:scale-105 active:scale-95 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-[#25D366]/40 focus-visible:ring-offset-2"
       >
         {/* Subtle breathing glowing halo */}
         <span
@@ -54,7 +54,7 @@ export default function WhatsAppButton() {
 
         {/* WhatsApp Official SVG Icon */}
         <svg
-          className="w-7 h-7 fill-current"
+          className="w-6 h-6 sm:w-7 sm:h-7 fill-current"
           viewBox="0 0 24 24"
           aria-hidden="true"
         >
