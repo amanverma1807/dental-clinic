@@ -3,8 +3,11 @@
 import React from "react";
 import Image from "next/image";
 import { CLINIC_DOCTOR_CONFIG } from "./doctorAsset";
+import { DoctorProfile } from "@/lib/types";
 
-export default function Doctors() {
+export default function Doctors({ doctor }: { doctor?: DoctorProfile }) {
+  const doc = doctor || CLINIC_DOCTOR_CONFIG;
+
   return (
     <section id="about" className="py-12 sm:py-16 bg-[#F7F4EE] border-b border-[#D4E5E9] scroll-mt-24 sm:scroll-mt-28">
       <div className="max-w-7xl mx-auto px-4 sm:px-6">
@@ -15,8 +18,8 @@ export default function Doctors() {
             {/* Doctor Portrait Column - Uses centralized doctor asset config */}
             <div className="lg:col-span-5 relative h-72 sm:h-80 lg:h-[400px] w-full bg-[#164E63]">
               <Image
-                src={CLINIC_DOCTOR_CONFIG.imageSrc}
-                alt={CLINIC_DOCTOR_CONFIG.altText}
+                src={doc.imageSrc}
+                alt={doc.altText || doc.name}
                 fill
                 sizes="(max-width: 1024px) 100vw, 40vw"
                 className="object-cover object-top"
@@ -24,8 +27,8 @@ export default function Doctors() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#164E63]/75 via-transparent to-transparent pointer-events-none" />
               
               <div className="absolute bottom-4 left-4 right-4 p-3 glass-surface-dark text-white text-xs flex items-center justify-between">
-                <span className="font-semibold text-white">{CLINIC_DOCTOR_CONFIG.qualifications}</span>
-                <span className="text-[11px] text-[#E8F4F7]">{CLINIC_DOCTOR_CONFIG.experience}</span>
+                <span className="font-semibold text-white">{doc.qualifications}</span>
+                <span className="text-[11px] text-[#E8F4F7]">{doc.experience}</span>
               </div>
             </div>
 
@@ -36,11 +39,11 @@ export default function Doctors() {
               </span>
 
               <h2 className="text-2xl sm:text-3xl font-normal text-[#164E63] font-display tracking-tight">
-                Led by {CLINIC_DOCTOR_CONFIG.name} &amp; Consultant Specialists
+                Led by {doc.name} &amp; Consultant Specialists
               </h2>
 
               <p className="text-sm sm:text-base text-[#1E293B]/85 leading-relaxed font-normal">
-                At Sai Dental Clinic, our philosophy centers on conservative dentistry, patient comfort, and strict European Class-B sterilization. From single-visit painless root canals to computer-guided dental implants, we provide honest diagnoses with zero unnecessary treatments.
+                {doc.bio || "At Sai Dental Clinic, our philosophy centers on conservative dentistry, patient comfort, and strict European Class-B sterilization. From single-visit painless root canals to computer-guided dental implants, we provide honest diagnoses with zero unnecessary treatments."}
               </p>
 
               {/* Core Clinical Focus Badges - Sharp Rectangles */}

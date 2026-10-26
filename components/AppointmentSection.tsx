@@ -11,11 +11,41 @@ export default function AppointmentSection() {
     preferredDate: "",
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setSubmitError(null);
+    setIsSubmitting(true);
+
+    try {
+      const res = await fetch("/api/enquiries", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.name,
+          phone: formData.phone,
+          treatment: formData.service,
+          appointment_preference: `${formData.preferredShift}${formData.preferredDate ? ` | Date: ${formData.preferredDate}` : ""}`,
+          source: "appointment",
+        }),
+      });
+
+      const result = await res.json();
+
+      if (!res.ok) {
+        throw new Error(result.error || "Failed to submit appointment request");
+      }
+
+      setSubmitted(true);
+    } catch (err: unknown) {
+      const errorMsg = err instanceof Error ? err.message : "Network error. Please try again or call our reception.";
+      setSubmitError(errorMsg);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const whatsappDirectUrl = `https://wa.me/919800000000?text=${encodeURIComponent(
@@ -229,12 +259,31 @@ export default function AppointmentSection() {
                   </div>
                 </div>
 
+                {submitError && (
+                  <div className="p-3 bg-red-50 border border-red-200 text-red-700 text-xs flex items-center gap-2">
+                    <svg className="w-4 h-4 shrink-0 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                    </svg>
+                    <span>{submitError}</span>
+                  </div>
+                )}
+
                 <button
                   type="submit"
-                  className="w-full inline-flex items-center justify-center min-h-[44px] px-6 py-2.5 bg-[#164E63] hover:bg-[#287D91] text-white text-xs font-semibold shadow-soft transition-all duration-200 cursor-pointer active:scale-98"
+                  disabled={isSubmitting}
+                  className="w-full inline-flex items-center justify-center min-h-[44px] px-6 py-2.5 bg-[#164E63] hover:bg-[#287D91] disabled:bg-slate-400 text-white text-xs font-semibold shadow-soft transition-all duration-200 cursor-pointer disabled:cursor-not-allowed active:scale-98"
                 >
-                  <span>Request Appointment</span>
-                  <span className="ml-1.5">&rarr;</span>
+                  {isSubmitting ? (
+                    <span className="flex items-center gap-2">
+                      <span className="w-3.5 h-3.5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                      <span>Recording Request...</span>
+                    </span>
+                  ) : (
+                    <>
+                      <span>Request Appointment</span>
+                      <span className="ml-1.5">&rarr;</span>
+                    </>
+                  )}
                 </button>
               </form>
             )}

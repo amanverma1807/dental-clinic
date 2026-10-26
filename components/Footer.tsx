@@ -115,7 +115,9 @@ export default function Footer() {
           <div className="flex items-center gap-3">
             <span>European Class-B Sterilization Standard</span>
             <span>&bull;</span>
-            <span>Designed for Portfolio Showcase</span>
+            <Link href="/admin" className="text-[#E8F4F7]/60 hover:text-white underline">
+              Staff Portal
+            </Link>
           </div>
         </div>
       </div>

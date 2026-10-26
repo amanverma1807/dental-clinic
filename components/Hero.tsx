@@ -3,8 +3,10 @@
 import React from "react";
 import Image from "next/image";
 import { CLINIC_DOCTOR_CONFIG } from "./doctorAsset";
+import { DoctorProfile } from "@/lib/types";
 
-export default function Hero() {
+export default function Hero({ doctor }: { doctor?: DoctorProfile }) {
+  const doc = doctor || CLINIC_DOCTOR_CONFIG;
   return (
     <section
       id="hero"
@@ -140,8 +142,8 @@ export default function Hero() {
                 {/* Image container using centralized doctor asset configuration */}
                 <div className="relative h-[280px] sm:h-[340px] lg:h-[390px] w-full bg-[#164E63]">
                   <Image
-                    src={CLINIC_DOCTOR_CONFIG.imageSrc}
-                    alt={CLINIC_DOCTOR_CONFIG.altText}
+                    src={doc.imageSrc}
+                    alt={doc.altText || doc.name}
                     fill
                     priority
                     sizes="(max-width: 640px) 92vw, (max-width: 1024px) 400px, 460px"
@@ -153,20 +155,20 @@ export default function Hero() {
                   <div className="absolute bottom-3 left-3 right-3 z-10 p-3 sm:p-3.5 bg-white/95 backdrop-blur-md border border-[#D4E5E9]/80 shadow-sm flex items-center justify-between gap-2.5 sm:gap-3">
                     <div className="min-w-0">
                       <div className="text-sm font-bold text-[#164E63] truncate">
-                        {CLINIC_DOCTOR_CONFIG.name}
+                        {doc.name}
                       </div>
                       <div className="text-[11px] text-[#475569] font-medium truncate">
-                        {CLINIC_DOCTOR_CONFIG.qualifications}
+                        {doc.qualifications}
                       </div>
                     </div>
                     
                     <div className="shrink-0 text-right">
                       <div className="inline-flex items-center gap-0.5 text-[#EAB308] text-xs font-bold">
                         <span>★</span>
-                        <span className="text-[#164E63]">{CLINIC_DOCTOR_CONFIG.rating}</span>
+                        <span className="text-[#164E63]">{doc.rating}</span>
                       </div>
                       <div className="text-[10px] text-[#64748B] font-medium whitespace-nowrap">
-                        {CLINIC_DOCTOR_CONFIG.roleLabel}
+                        {doc.roleLabel}
                       </div>
                     </div>
                   </div>

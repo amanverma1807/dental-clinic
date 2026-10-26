@@ -22,6 +22,8 @@ export interface DoctorAssetConfig {
   rating: string;
   /** Role or seniority label */
   roleLabel: string;
+  /** Clinical bio / philosophy text */
+  bio?: string;
   /** Flag noting this is a demo placeholder for portfolio preview */
   isDemoPlaceholder: boolean;
 }
