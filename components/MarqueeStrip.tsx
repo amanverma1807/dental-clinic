@@ -21,7 +21,7 @@ export default function MarqueeStrip({ className = "" }: MarqueeStripProps) {
   return (
     <aside
       aria-label="Clinic Highlights Announcement Ticker"
-      className={`relative w-full overflow-hidden bg-[#164E63] text-white py-3 border-y border-[#287D91]/40 marquee-container-auto select-none ${className}`}
+      className={`relative w-full overflow-hidden bg-[#164E63] text-white py-3.5 sm:py-4 border-y border-[#287D91]/40 marquee-container-auto select-none ${className}`}
     >
       <style>{`
         @keyframes continuousMarquee {

@@ -2,6 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
+import { CLINIC_DOCTOR_CONFIG } from "./doctorAsset";
 
 export default function Doctors() {
   return (
@@ -11,11 +12,11 @@ export default function Doctors() {
         <div className="bg-white border border-[#D4E5E9] overflow-hidden shadow-soft">
           <div className="grid grid-cols-1 lg:grid-cols-12 items-center">
             
-            {/* Doctor Portrait Column */}
+            {/* Doctor Portrait Column - Uses centralized doctor asset config */}
             <div className="lg:col-span-5 relative h-72 sm:h-80 lg:h-[400px] w-full bg-[#164E63]">
               <Image
-                src="/images/dentist-doctor.jpg"
-                alt="Dr. Vikram Sharma, Senior Dental Surgeon and Implantologist at Sai Dental Clinic"
+                src={CLINIC_DOCTOR_CONFIG.imageSrc}
+                alt={CLINIC_DOCTOR_CONFIG.altText}
                 fill
                 sizes="(max-width: 1024px) 100vw, 40vw"
                 className="object-cover object-top"
@@ -23,19 +24,19 @@ export default function Doctors() {
               <div className="absolute inset-0 bg-gradient-to-t from-[#164E63]/75 via-transparent to-transparent pointer-events-none" />
               
               <div className="absolute bottom-4 left-4 right-4 p-3 glass-surface-dark text-white text-xs flex items-center justify-between">
-                <span className="font-semibold text-white">BDS, MDS (Prosthodontics & Implants)</span>
-                <span className="text-[11px] text-[#E8F4F7]">15+ Yrs Practice (Demo)</span>
+                <span className="font-semibold text-white">{CLINIC_DOCTOR_CONFIG.qualifications}</span>
+                <span className="text-[11px] text-[#E8F4F7]">{CLINIC_DOCTOR_CONFIG.experience}</span>
               </div>
             </div>
 
             {/* Clinic & Doctor Bio Column */}
             <div className="lg:col-span-7 p-6 sm:p-8 lg:p-10 space-y-4">
               <span className="text-[11px] font-bold uppercase tracking-wider text-[#287D91] block">
-                About The Clinic & Doctor
+                About The Clinic &amp; Doctor
               </span>
 
               <h2 className="text-2xl sm:text-3xl font-normal text-[#164E63] font-display tracking-tight">
-                Led by Dr. Vikram Sharma & Consultant Specialists
+                Led by {CLINIC_DOCTOR_CONFIG.name} &amp; Consultant Specialists
               </h2>
 
               <p className="text-sm sm:text-base text-[#1E293B]/85 leading-relaxed font-normal">
